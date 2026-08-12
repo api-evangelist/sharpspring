@@ -1,0 +1,164 @@
+generated: '2026-08-12'
+method: searched
+source: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50570-Understanding-Lead-Gen-CRM-Open-API-Error-Codes?lang=en_US
+format: proprietary
+note: >-
+  Not RFC 9457. SharpSpring returns HTTP 200 for most application outcomes and carries the failure in
+  a JSON-RPC-style envelope: every response has result, error and id. API-level failures (auth,
+  malformed request, quota) populate the top-level `error` object with a numeric code, a message and a
+  `data` object naming the offending param. Object-level failures — invalid objects inside a bulk
+  create/update — leave `error` null and return per-object error entries inside the `result` array, so
+  a caller that only checks HTTP status or the top-level error will silently miss partial failures.
+  The numeric codes below are published verbatim by the provider; the class groupings and the
+  remediation column are API Evangelist's reading of them, not provider text.
+envelope:
+  transport: HTTP 200 for most outcomes; 401 observed on missing/invalid credentials
+  fields:
+    result: return value — objects and object-level errors
+    error: API-level error object (code, message, data)
+    id: the caller-supplied request id, echoed back
+  api_level_error_shape:
+    code: integer
+    message: string
+    data: object naming the offending parameter(s)
+  object_level_errors: returned inside the result array, per submitted object
+classes:
+- range: 1xx
+  meaning: request framing, authentication and quota
+- range: 2xx
+  meaning: method signature, parameters and object validation
+- range: 3xx
+  meaning: persistence, uniqueness and reseller/sub-account permissions
+- range: 404
+  meaning: record not found
+- range: 999
+  meaning: unclassified server error
+problems:
+- code: 101
+  message: Invalid request data format.
+  class: request
+- code: 102
+  message: Header missing `request ID`.
+  class: request
+  remediation: supply the `id` field in the request envelope
+- code: 103
+  message: Header missing `account ID`.
+  class: authentication
+- code: 104
+  message: Header missing `Secret Key`.
+  class: authentication
+- code: 105
+  message: User authentication failed.
+  class: authentication
+- code: 106
+  message: Exceeded daily method call limit.
+  class: rate-limit
+  remediation: back off until the daily window resets; documented ceiling is 50,000 requests/day
+- code: 107
+  message: Exceeded per second method call limit.
+  class: rate-limit
+  remediation: throttle to the documented 10 queries per second
+- code: 201
+  message: Missing method signature.
+  class: method
+- code: 202
+  message: Missing params array.
+  class: method
+- code: 203
+  message: Missing header array.
+  class: method
+- code: 204
+  message: Invalid method signature.
+  class: method
+- code: 205
+  message: Invalid parameters.
+  class: parameters
+- code: 206
+  message: Missing parameters.
+  class: parameters
+- code: 207
+  message: Missing objects array.
+  class: parameters
+- code: 208
+  message: Object is malformed (expected array, got scalar).
+  class: parameters
+- code: 209
+  message: Attempting to execute an excess amount of queries.
+  class: rate-limit
+  remediation: documented ceiling is 500 queries per request
+- code: 210
+  message: Got array, expected variable.
+  class: parameters
+- code: 211
+  message: Only custom fields can be deleted.
+  class: validation
+- code: 212
+  message: Object is not owned by the company.
+  class: authorization
+- code: 213
+  message: The lead you tried to add is already a member.
+  class: validation
+- code: 214
+  message: The lead you tried to add does not exist for this account.
+  class: validation
+- code: 215
+  message: You have supplied an invalid country code.
+  class: validation
+- code: 216
+  message: Company not found. Please make sure the ID supplied belongs to your company.
+  class: authorization
+- code: 217
+  message: Incorrect parameter value supplied.
+  class: parameters
+- code: 218
+  message: Invalid username supplied, needs to be in the form of a email address.
+  class: validation
+- code: 219
+  message: Incorrect `eventSource` value supplied.
+  class: validation
+- code: 220
+  message: Please supply a valid `whoID`.
+  class: validation
+- code: 221
+  message: The current username/email address is already in use by another account.
+  class: conflict
+- code: 222
+  message: You have exceeded the amount of leads to process. A max of 100 leads is allowed.
+  class: rate-limit
+  remediation: chunk lead batches to 100 objects per call
+- code: 223
+  message: 'Please make sure to add all relevant fields for a user is supplied: `userEmail`, `userPassword`, `userDisplayName`.'
+  class: validation
+- code: 301
+  message: Entry already exists.
+  class: conflict
+- code: 302
+  message: No table rows affected.
+  class: persistence
+- code: 303
+  message: 'Cannot add or update a child row: a foreign key constraint fails.'
+  class: persistence
+  note: a database-layer message surfaced to API callers verbatim
+- code: 304
+  message: No sub-accounts supplied.
+  class: reseller
+- code: 305
+  message: Permission denied. You are not a reseller.
+  class: authorization
+- code: 306
+  message: Permission denied. You do not manage these accounts.
+  class: authorization
+- code: 307
+  message: Sub account not found.
+  class: reseller
+- code: 404
+  message: A record with that ID does not exist.
+  class: not-found
+- code: 999
+  message: Unknown error. Please contact Constant Contact Developer Support.
+  class: server
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50570-Understanding-Lead-Gen-CRM-Open-API-Error-Codes?lang=en_US
+    status: 200

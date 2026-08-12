@@ -1,0 +1,152 @@
+generated: '2026-08-12'
+method: searched
+source: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50564-Understanding-Lead-Gen--CRM-Open-API-Methods?lang=en_US
+docs:
+- https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50881-Understanding-Lead-Gen-CRM-Open-API-Schema-Leads?lang=en_US
+- https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50887-Understanding-Lead-Gen-CRM-Open-API-Schema-Opportunities?lang=en_US
+- https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50888-Understanding-Lead-Gen--CRM-Open-API-Schema-Emails?lang=en_US
+- https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50880-Understanding-Lead-Gen-CRM-Open-API-Schema-Lists?lang=en_US
+note: >-
+  Built from the provider's published Methods index and object Schema articles, not from a
+  specification — SharpSpring ships no OpenAPI or JSON Schema, so the entity graph below is read from
+  HTML reference tables. Relationships are taken from explicitly documented id-reference fields
+  (accountID, ownerID, campaignID on the Lead object) and from the shape of the method surface
+  (e.g. opportunityLeads is the documented join between opportunities and leads). Field types shown
+  are the provider's own storage types, which the documentation exposes verbatim (bigint, varchar,
+  picklist, tinyint) rather than as API types.
+id_convention:
+  style: opaque numeric
+  type: bigint(20)
+  prefixes: none — ids carry no type prefix, so an id alone does not identify its entity
+entities:
+- name: lead
+  description: A contact record — the platform's central object, spanning marketing contact and CRM lead.
+  primary_key: id
+  natural_key: emailAddress
+  methods: [createLeads, getLead, getLeads, getLeadsDateRange, updateLeads, updateLeadsV2, deleteLeads, subscribeToLeadUpdates, getLeadTimeline, getLeadListMemberships, getRelatedLeadsByEmail]
+  key_fields:
+  - {name: id, type: bigint(20)}
+  - {name: accountID, type: bigint(20), reference: account}
+  - {name: ownerID, type: bigint(20), reference: user}
+  - {name: campaignID, type: bigint(20), reference: campaign}
+  - {name: leadStatus, type: picklist}
+  - {name: leadScore, type: smallint(6)}
+  - {name: leadScoreWeighted, type: smallint(6)}
+  - {name: persona, type: string(128)}
+  - {name: active, type: tinyint(1)}
+  - {name: firstName, type: varchar(50)}
+  - {name: lastName, type: varchar(50)}
+  - {name: emailAddress, type: varchar(150), required: true}
+  - {name: companyName, type: varchar(100)}
+  - {name: title, type: varchar(255)}
+  - {name: street, type: varchar(255)}
+  - {name: city, type: varchar(255)}
+  - {name: state, type: varchar(50)}
+  - {name: zipcode, type: varchar(50)}
+  - {name: country, type: varchar(255)}
+  - {name: website, type: varchar(255)}
+  - {name: phoneNumber, type: varchar(255)}
+  - {name: officePhoneNumber, type: varchar(255)}
+  - {name: phoneNumberExtension, type: varchar(255)}
+  - {name: mobilePhoneNumber, type: varchar(255)}
+  - {name: faxNumber, type: varchar(255)}
+  - {name: industry, type: varchar(255)}
+  - {name: description, type: text}
+  - {name: trackingID, type: varchar(255)}
+  - {name: isUnsubscribed, type: tinyint(1)}
+  - {name: updateTimestamp, type: timestamp}
+  custom_fields: addressed by systemName as an ordinary key on the object
+- name: account
+  description: A company/organization record that leads belong to.
+  primary_key: id
+  methods: [createAccounts, getAccount, getAccounts, getAccountsDateRange, updateAccounts, deleteAccounts, getAccountNotes, getAccountsNotes, updateAccountSendLimit, disableAccountSending, enableAccountSending]
+- name: opportunity
+  description: A sales deal in the CRM pipeline.
+  primary_key: id
+  methods: [createOpportunities, getOpportunity, getOpportunities, getOpportunitiesDateRange, updateOpportunities, deleteOpportunities, getOpportunityNotes, getOpportunitiesNotes]
+- name: opportunityLead
+  description: The documented join between an opportunity and the leads attached to it.
+  primary_key: id
+  methods: [createOpportunityLeads, getOpportunityLead, getOpportunityLeads, getOpportunityLeadsDateRange, deleteOpportunityLeads]
+- name: dealStage
+  description: A stage in the opportunity pipeline.
+  primary_key: id
+  methods: [createDealStages, getDealStage, getDealStages, getDealStagesDateRange, deleteDealStages]
+- name: campaign
+  description: A marketing campaign leads can be attributed to.
+  primary_key: id
+  methods: [createCampaigns, getCampaign, getCampaigns, getCampaignsDateRange, updateCampaigns, deleteCampaigns]
+- name: list
+  description: A contact list; membership is managed by a separate family of methods.
+  primary_key: id
+  methods: [createList, getActiveLists, updateList, deleteList, getListTags, getListMembers, getRemovedListMembers]
+- name: listMember
+  description: The join between a list and a lead, addressable by id or by email address.
+  methods: [addListMember, addListMembers, addListMemberEmailAddress, addListMembersEmailAddress, removeListMember, removeListMembers, removeListMemberEmailAddress, removeListMembersEmailAddress, removeListMembersAll, getListMemberships, getContactListMemberships, getLeadListMemberships]
+- name: email
+  description: An email asset.
+  primary_key: id
+  methods: [createEmail, getEmail, getEmailListing, updateEmail, deleteEmail]
+- name: emailJob
+  description: A send job for an email, with schedule and event reporting.
+  methods: [getEmailJobs, getEmailSendStatus, getScheduleSends, getScheduleSendStatus, deleteScheduleSend, getSendCount, getEmailEvents, getEmailSendEvents, getEmailSend, createSendMail]
+- name: emailVariable
+  description: A merge/personalization variable used inside emails.
+  methods: [createEmailVariable, createEmailVariables, addEmailVariable, setEmailVariable, getEmailVariables, deleteEmailVariable]
+- name: field
+  description: A field definition; custom fields are created and deleted here.
+  methods: [createFields, getFields, updateFields, deleteFields]
+- name: folder
+  description: An organizational container for assets.
+  methods: [createFolder, createFolders, getFolders, updateFolder, deleteFolder]
+- name: note
+  description: A free-text note attached to a lead, account or opportunity.
+  methods: [createNotes, updateNotes, deleteNotes, getContactNotes, getContactsNotes, getAccountNotes, getAccountsNotes, getOpportunityNotes, getOpportunitiesNotes]
+- name: task
+  description: A CRM task.
+  methods: [createTasks, getTasks, updateTasks, deleteTasks]
+- name: product
+  description: A product record used on opportunities.
+  methods: [createProduct, createProducts, getProducts, updateProduct, deleteProduct]
+- name: client
+  description: A managed sub-account, available to reseller/agency parents.
+  methods: [createClient, getClients, updateClient]
+- name: user
+  description: A platform user; owner of leads and accounts.
+  methods: [getUserProfiles]
+- name: event
+  description: Platform activity events, retrievable by type.
+  methods: [getEventsbyType, getLeadTimeline, logCalls]
+- name: unsubscribeCategory
+  description: Unsubscribe category taxonomy.
+  methods: [getUnsubscribeCategories]
+relationships:
+- {from: lead, to: account, kind: belongs_to, via: accountID, evidence: documented Lead schema field}
+- {from: lead, to: user, kind: belongs_to, via: ownerID, evidence: documented Lead schema field}
+- {from: lead, to: campaign, kind: belongs_to, via: campaignID, evidence: documented Lead schema field}
+- {from: account, to: lead, kind: has_many, via: accountID, evidence: inverse of the Lead schema field}
+- {from: opportunity, to: opportunityLead, kind: has_many, via: opportunity id, evidence: opportunityLeads method family}
+- {from: opportunityLead, to: lead, kind: belongs_to, via: lead id, evidence: opportunityLeads method family}
+- {from: opportunity, to: dealStage, kind: belongs_to, via: deal stage id, evidence: dealStages method family}
+- {from: opportunity, to: product, kind: has_many, via: product id, evidence: products method family}
+- {from: list, to: listMember, kind: has_many, via: list id, evidence: list member method family}
+- {from: listMember, to: lead, kind: belongs_to, via: lead id or emailAddress, evidence: addListMember vs addListMemberEmailAddress}
+- {from: email, to: emailJob, kind: has_many, via: email id, evidence: email job method family}
+- {from: email, to: emailVariable, kind: has_many, via: email id, evidence: email variable method family}
+- {from: note, to: lead, kind: belongs_to, via: lead id, evidence: getContactNotes}
+- {from: note, to: account, kind: belongs_to, via: account id, evidence: getAccountNotes}
+- {from: note, to: opportunity, kind: belongs_to, via: opportunity id, evidence: getOpportunityNotes}
+- {from: lead, to: field, kind: has_many, via: custom field systemName, evidence: fields method family}
+- {from: client, to: account, kind: has_many, via: sub-account, evidence: reseller errors 304-307}
+coverage:
+  entities: 20
+  relationships: 17
+  methods_indexed: 121
+  source_of_truth: provider HTML reference tables — no machine-readable schema exists to diff against
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50564-Understanding-Lead-Gen--CRM-Open-API-Methods?lang=en_US
+    status: 200
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50881-Understanding-Lead-Gen-CRM-Open-API-Schema-Leads?lang=en_US
+    status: 200

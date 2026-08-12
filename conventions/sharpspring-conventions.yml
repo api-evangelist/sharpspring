@@ -1,0 +1,117 @@
+generated: '2026-08-12'
+method: searched
+source: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+docs:
+- https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+- https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50404-Understanding-Lead-Gen-CRM-Open-API-Example-Code?lang=en_US
+- https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50564-Understanding-Lead-Gen--CRM-Open-API-Methods?lang=en_US
+note: >-
+  The SharpSpring Open API is not REST. Every call is an HTTPS POST to one endpoint carrying a JSON
+  envelope of method, params and id — the provider describes it as "a standard very similar to
+  JSON-RPC". There are no resource paths, no HTTP verbs beyond POST, no content negotiation and no
+  hypermedia. Almost every cross-cutting convention an agent would look for is therefore either absent
+  or expressed inside the envelope rather than in HTTP.
+style:
+  protocol: JSON over HTTPS POST
+  shape: JSON-RPC-like (method / params / id), not JSON-RPC 2.0 — there is no `jsonrpc` version member
+  single_endpoint: true
+  http_methods_used: [POST]
+  content_type: application/json
+request_envelope:
+  method: the API method name, e.g. getLeads
+  params: a hash of method-specific parameters; bulk methods take an `objects` array
+  id: caller-supplied request identifier, echoed on the response
+response_envelope:
+  result: the return value — objects, and object-level errors for bulk writes
+  error: the API-level error object (code / message / data), null on success
+  id: the request id echoed back
+authentication:
+  style: static account ID + secret key
+  carriers: [query string (accountID, secretKey), headers (X-Account-Id, Authorization bearer)]
+  precedence: query string wins when both are supplied
+  detail: authentication/sharpspring-authentication.yml
+idempotency:
+  supported: false
+  idempotency_key_header: none
+  note: >-
+    No idempotency key, no request-replay contract, no documented safe-retry window. The only
+    near-idempotent behaviour is incidental: emailAddress is the natural key on a lead, so a repeated
+    createLeads for an existing address fails with error 213/301 rather than duplicating. That is
+    uniqueness enforcement, not an idempotency contract — a retried updateLeads or createOpportunities
+    after a timeout has no defined outcome.
+pagination:
+  style: limit / offset
+  params:
+    limit: maximum records to return; documented ceiling 500 per request
+    offset: zero-based starting record
+  response_fields: none — the result array carries no total, cursor or next-page token
+  note: >-
+    Callers must page blind: there is no count in the envelope, so the only end-of-collection signal
+    is a short or empty result array. Date-window variants (getLeadsDateRange, getAccountsDateRange,
+    getCampaignsDateRange, getDealStagesDateRange, getOpportunitiesDateRange,
+    getOpportunityLeadsDateRange) exist for incremental sync.
+filtering:
+  style: a `where` hash inside params
+  example_shape: '{"where": {"id": [1,2,3,4]}, "limit": 500, "offset": 0}'
+field_expansion:
+  supported: false
+sparse_fields:
+  supported: false
+custom_fields:
+  supported: true
+  mechanism: >-
+    Custom fields are addressed by their systemName as an ordinary key on the object (field_<id> in
+    Postback payloads). getFields / createFields / updateFields / deleteFields manage the schema;
+    error 211 states that only custom fields may be deleted.
+metadata:
+  supported: false
+  note: no generic metadata bag; custom fields are the extension point
+request_tracing:
+  request_id_header: none
+  correlation: >-
+    The caller supplies `id` in the request envelope and the API echoes it back. That is
+    client-side correlation only — the provider does not return a server-generated trace id, so a
+    support ticket cannot be tied to a server request.
+versioning:
+  scheme: uri-path
+  versions:
+  - version: v1
+    base: https://api.sharpspring.com/pubapi/v1/
+    semantics: timestamps resolved against the Company Profile time zone
+    status: available
+  - version: v1.2
+    base: https://api.sharpspring.com/pubapi/v1.2/
+    semantics: all timestamps in UTC
+    status: available — the version to prefer for new work
+  note: >-
+    Both versions are live and both answer 401 anonymously. The provider publishes no deprecation
+    schedule for v1, and the only documented difference is time-zone handling.
+error_envelope:
+  format: proprietary (code / message / data), not RFC 9457
+  http_status_carries_error: false
+  detail: errors/sharpspring-problem-types.yml
+rate_limit_signaling:
+  headers: none
+  status_on_exhaustion: application error codes 106 / 107 / 209 inside a 200 response
+  detail: rate-limits/sharpspring-rate-limits.yml
+events:
+  webhooks: no subscription API; outbound Postback URLs configured per form and per automation step
+  detail: asyncapi/sharpspring-postbacks-webhooks.yml
+agent_readiness_gaps:
+- no machine-readable description (no OpenAPI, no JSON Schema, no GraphQL SDL)
+- no idempotency contract
+- no rate-limit response headers and no 429
+- no server-generated request/trace id
+- errors carried in a 200 body, so transport-level failure detection is unreliable
+- single all-or-nothing credential with no scopes, so least-privilege agent access is not expressible
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+    status: 200
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50404-Understanding-Lead-Gen-CRM-Open-API-Example-Code?lang=en_US
+    status: 200
+  - url: https://api.sharpspring.com/pubapi/v1/
+    status: 401
+  - url: https://api.sharpspring.com/pubapi/v1.2/
+    status: 401

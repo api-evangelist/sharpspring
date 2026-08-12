@@ -1,0 +1,38 @@
+generated: '2026-08-12'
+method: searched
+source: https://sharpspring.com/agency-pricing/
+plan_count: 0
+pricing_model: quote-based
+note: >-
+  SharpSpring publishes no priced tiers on its own site. Its two pricing surfaces —
+  https://sharpspring.com/agency-pricing/ (HTTP 200) and https://sharpspring.com/pricing/ (HTTP 301 to
+  Constant Contact) — carry no numbers at all: the agency page is a positioning page ending in a
+  "Sound good? Contact us." embedded lead form, and the SMB/Enterprise entries in the site navigation
+  route to a demo request. There is no self-serve signup and no published price for API access. The
+  canonical successor page, https://www.constantcontact.com/pricing/lead-gen-crm, could not be read —
+  constantcontact.com returns HTTP 403 to every non-browser client we tried, so we are not recording
+  any tier from it. Third-party price roundups exist but are not provider-published and are not
+  recorded here. plan_count is therefore an honest zero: nothing priced was verifiably published by
+  the provider on a page we could read.
+plans: []
+api_pricing:
+  metered: false
+  api_access_gated_behind_plan: true
+  note: >-
+    API credentials are generated inside a paying account (Settings > SharpSpring API > API Settings);
+    there is no free tier, sandbox account, or trial credential documented for developers.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://sharpspring.com/agency-pricing/
+    status: 200
+    note: no prices on the page; ends in a contact form
+  - url: https://sharpspring.com/pricing/
+    status: 301
+    note: Location https://www.constantcontact.com/lead-gen-crm
+  - url: https://www.constantcontact.com/pricing/lead-gen-crm
+    status: 403
+    note: WAF-blocked to curl and to our fetcher alike
+  - url: https://sharpspring.com/get-a-demo/
+    status: 301
+    note: Location https://www.constantcontact.com/signup/lead-gen-crm/demo?rmc=shspdemo

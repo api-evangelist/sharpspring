@@ -1,0 +1,91 @@
+generated: '2026-08-12'
+method: searched
+source: https://status.sharpspring.com/
+versioning:
+  scheme: uri-path
+  current: v1.2
+  versions:
+  - version: v1
+    base: https://api.sharpspring.com/pubapi/v1/
+    status: available
+    note: timestamps resolved against the Company Profile time zone
+  - version: v1.2
+    base: https://api.sharpspring.com/pubapi/v1.2/
+    status: available
+    note: timestamps in UTC; the version to prefer
+  docs: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+  note: >-
+    Both versions answer live. No version negotiation header, no date-pinned versions, no changelog
+    tying method changes to a version.
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No deprecation policy, no sunset schedule for v1, and no RFC 8594 Sunset/Deprecation headers
+    observed on the live endpoint. The product itself has been renamed (SharpSpring became Constant
+    Contact Lead Gen & CRM) without any published API migration or retirement notice, which is the
+    material lifecycle risk here.
+sla:
+  url: null
+  uptime_target: null
+  note: no public SLA or uptime commitment found on the marketing site or in the knowledge base
+status_page:
+  url: https://status.sharpspring.com/
+  provider: Atlassian Statuspage
+  api: https://status.sharpspring.com/api/v2/summary.json
+  history_feed: https://status.sharpspring.com/history.rss
+  observed_state: All Systems Operational
+  observed_at: '2026-08-12'
+  components_tracked: 20
+  api_component: APIs and Integrations
+  components:
+  - APIs and Integrations
+  - SharpSpring Application
+  - Contact Manager
+  - Contact Record/Lead Page
+  - Forms Serving
+  - Forms Delivery
+  - Form Submissions Processing
+  - Email Sending
+  - Email Delivery
+  - Email Events Processing
+  - Imports and Exports
+  - Landing Pages Serving
+  - Lists and Segmentation
+  - List Building
+  - Reporting
+  - Social Media Posting
+  - Social Media Listening
+  - Workflows Processing
+  - Web Impression Tracking
+  - Chatbot Serving
+  note: >-
+    A real, machine-readable Statuspage with a dedicated "APIs and Integrations" component — the
+    strongest operational-transparency signal SharpSpring publishes, and the one place its API has a
+    first-class status surface.
+changelog:
+  url: null
+  published: false
+  note: >-
+    No dated API changelog or release-notes page was found for the Open API. Product release notes
+    live in the Constant Contact knowledge base but are not version-stamped against API methods, and
+    the knowledge-base articles carry no revision history a consumer can diff.
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://status.sharpspring.com/
+    status: 200
+  - url: https://status.sharpspring.com/api/v2/summary.json
+    status: 200
+  - url: https://status.sharpspring.com/api/v2/status.json
+    status: 200
+  - url: https://status.sharpspring.com/history.rss
+    status: 200
+  - url: https://api.sharpspring.com/pubapi/v1/
+    status: 401
+    note: no Sunset or Deprecation header present
+  - url: https://api.sharpspring.com/pubapi/v1.2/
+    status: 401

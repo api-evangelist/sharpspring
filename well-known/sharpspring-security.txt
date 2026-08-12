@@ -1,0 +1,6 @@
+Contact: security [ at ] sharpspring.com
+Encryption: https://sharpspring.com/.well-known/sharpspring.gpg.txt
+Permission: none
+Policy: http://sharpspring.com/legal/privacy/
+Hiring: https://careers.sharpspring.com/
+

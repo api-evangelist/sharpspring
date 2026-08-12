@@ -1,9 +1,17 @@
 aid: sharpspring
 name: SharpSpring
-description: SharpSpring is a company surfaced via the API Evangelist marketing integration graph — named
-  as an integration by 2 members of the programmable-marketing cohort — and added to the network as a
-  stub for full-pipeline profiling.
+description: SharpSpring — now sold as Constant Contact Lead Gen & CRM after Constant Contact acquired
+  the company in 2021 — is a marketing automation and CRM platform for small businesses and digital
+  marketing agencies, covering email marketing, landing pages, forms, visual automation workflows,
+  social management, campaign tracking, lead scoring and a built-in sales CRM. Its developer surface is
+  the SharpSpring Open API, a JSON-RPC-style HTTPS POST endpoint at api.sharpspring.com/pubapi/ that
+  exposes roughly 120 published methods over leads, accounts, opportunities, campaigns, deal stages,
+  emails, email jobs, lists and list members, fields, folders, notes, products and tasks. Authentication
+  is a static account ID plus secret key generated in the application; there is no OAuth, no scopes and
+  no OpenAPI description. Event delivery is handled by workflow and form Postback URLs rather than a
+  webhook subscription API.
 url: https://raw.githubusercontent.com/api-evangelist/sharpspring/refs/heads/main/apis.yml
+image: https://sharpspring.com/wp-content/uploads/2021/10/SharpSpring-From-CTCT-Logo-RGB-Color-1200.png
 x-type: company
 x-source: harvest:marketing-integration-graph
 x-tier: stub
@@ -13,16 +21,126 @@ created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
-apis: []
+- Marketing
+- Marketing Automation
+- CRM
+- Email Marketing
+- Sales
+- Leads
+- Campaigns
+- Automation
+- SaaS
+apis:
+- aid: sharpspring:open-api
+  name: SharpSpring Open API
+  description: The SharpSpring (Constant Contact Lead Gen & CRM) Open API — a single HTTPS POST endpoint
+    that accepts a JSON envelope of method, params and id, very similar to JSON-RPC. Version v1 resolves
+    timestamps against the Company Profile time zone; v1.2 handles all timestamps in UTC. Credentials
+    are an account ID and secret key passed either as query-string parameters or as the X-Account-Id
+    header plus an Authorization bearer token. Documented limits are 50,000 requests per day, 10 queries
+    per second, and 500 queries per request.
+  humanURL: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+  baseURL: https://api.sharpspring.com/pubapi/v1.2/
+  tags:
+  - Marketing Automation
+  - CRM
+  - Leads
+  - JSON-RPC
+  properties:
+  - type: Documentation
+    url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+  - type: APIReference
+    url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50564-Understanding-Lead-Gen--CRM-Open-API-Methods?lang=en_US
+  - type: GettingStarted
+    url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50404-Understanding-Lead-Gen-CRM-Open-API-Example-Code?lang=en_US
+  - type: Authentication
+    url: authentication/sharpspring-authentication.yml
+  - type: ErrorCatalog
+    url: errors/sharpspring-problem-types.yml
+  - type: RateLimits
+    url: rate-limits/sharpspring-rate-limits.yml
+  - type: Conventions
+    url: conventions/sharpspring-conventions.yml
+  - type: DataModel
+    url: data-model/sharpspring-data-model.yml
+  - type: Webhooks
+    url: asyncapi/sharpspring-postbacks-webhooks.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/sharpspring-domain-security.yml
 - type: Website
   url: https://sharpspring.com/
+- type: DeveloperPortal
+  url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+- type: Documentation
+  url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+- type: APIReference
+  url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50564-Understanding-Lead-Gen--CRM-Open-API-Methods?lang=en_US
+- type: GettingStarted
+  url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50404-Understanding-Lead-Gen-CRM-Open-API-Example-Code?lang=en_US
+- type: Support
+  url: https://sharpspring.com/customer-support/
+- type: HelpCenter
+  url: https://knowledgebase.constantcontact.com/lead-gen-crm?lang=en_US
+- type: Blog
+  url: https://www.constantcontact.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/sharpspring
+- type: StatusPage
+  url: https://status.sharpspring.com/
+- type: Pricing
+  url: https://sharpspring.com/agency-pricing/
+- type: SignUp
+  url: https://www.constantcontact.com/signup/lead-gen-crm/demo
+- type: Login
+  url: https://api.sharpspring.com/
+- type: TermsOfService
+  url: https://www.constantcontact.com/legal/terms
+- type: PrivacyPolicy
+  url: https://www.constantcontact.com/legal/privacy-notice
+- type: Security
+  url: https://www.constantcontact.com/disclosure
+- type: Integrations
+  url: https://sharpspring.com/app-marketplace/
+- type: WellKnown
+  url: well-known/sharpspring-well-known.yml
+- type: SecurityTxt
+  url: well-known/sharpspring-security.txt
+- type: LLMsTxt
+  url: llms/sharpspring-llms.txt
+- type: Authentication
+  url: authentication/sharpspring-authentication.yml
+- type: Conventions
+  url: conventions/sharpspring-conventions.yml
+- type: ErrorCatalog
+  url: errors/sharpspring-problem-types.yml
+- type: RateLimits
+  url: rate-limits/sharpspring-rate-limits.yml
+- type: Plans
+  url: plans/sharpspring-plans-pricing.yml
+- type: Lifecycle
+  url: lifecycle/sharpspring-lifecycle.yml
+- type: Conformance
+  url: conformance/sharpspring-conformance.yml
+- type: DataModel
+  url: data-model/sharpspring-data-model.yml
+- type: Packages
+  url: packages/sharpspring-packages.yml
+- type: Webhooks
+  url: asyncapi/sharpspring-postbacks-webhooks.yml
+- type: VulnerabilityDisclosure
+  url: security/sharpspring-vulnerability-disclosure.yml
 x-vouched-by:
 - Chili Piper
 - Moosend
 x-vouch-count: 2
+x-enrichment:
+  date: '2026-08-12'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1

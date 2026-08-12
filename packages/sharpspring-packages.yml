@@ -1,0 +1,126 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, packagist.org, rubygems.org, crates.io, nuget.org, search.maven.org,
+  proxy.golang.org, github.com/sharpspring
+official_package_count: 0
+note: >-
+  SharpSpring publishes NO first-party client library in any language. The provider's own Example Code
+  article teaches raw PHP cURL against the single POST endpoint and links no SDK. The github.com/
+  sharpspring organization is real and GitHub-verified (69 public repos, blog https://sharpspring.com,
+  Gainesville FL) but contains only forks of unrelated third-party projects — guzzle3, predis,
+  twilio-php, prometheus exporters, modsecurity-docker, hadolint — and not one repository that wraps
+  the SharpSpring API. Every library below is community-authored, and every one of them is stale: the
+  most-used PHP client last released in 2017, and the newest entry is an n8n community node rather
+  than an SDK. That is the finding — an API with ~120 methods and no maintained client anywhere. No
+  `SDKs` pointer is emitted in apis.yml, because there is no official SDK to point at.
+packages:
+- language: php
+  registry: packagist
+  name: wyz/sharpspring-restapi
+  url: https://packagist.org/packages/wyz/sharpspring-restapi
+  install: composer require wyz/sharpspring-restapi
+  official: false
+  version: '1.2'
+  published: '2017-08-05'
+  note: >-
+    The most complete community PHP client (value objects, connection wrapper, custom-field mapping).
+    Nine years without a release; predates the Constant Contact acquisition and the v1.2 endpoint.
+- language: php
+  registry: packagist
+  name: colling-media/sharpspring-api
+  url: https://packagist.org/packages/colling-media/sharpspring-api
+  install: composer require colling-media/sharpspring-api
+  official: false
+  version: v0.0.1
+  published: '2016-11-09'
+  note: single 0.0.1 release, never updated; ~1,840 lifetime installs
+- language: php
+  registry: packagist
+  name: thepixelage/sharpspring-php-sdk
+  url: https://packagist.org/packages/thepixelage/sharpspring-php-sdk
+  install: composer require thepixelage/sharpspring-php-sdk
+  official: false
+  version: null
+  published: null
+  note: >-
+    Listed in Packagist search (71 installs) but repo.packagist.org/packages/... returns 404, so no
+    version metadata is resolvable — checked, nothing to record.
+- language: php
+  registry: packagist
+  name: finlet/sharpspring-api-php-client
+  url: https://packagist.org/packages/finlet/sharpspring-api-php-client
+  install: composer require finlet/sharpspring-api-php-client
+  official: false
+  version: null
+  published: null
+  note: 6 lifetime installs; metadata endpoint returns 404, so no version could be read
+- language: php
+  registry: packagist
+  name: gauravtechie/sharpspring-api
+  url: https://packagist.org/packages/gauravtechie/sharpspring-api
+  install: composer require gauravtechie/sharpspring-api
+  official: false
+  version: null
+  published: null
+  note: 10 lifetime installs; metadata endpoint returns 404
+- language: javascript
+  registry: npm
+  name: gatsby-plugin-sharpspring
+  url: https://www.npmjs.com/package/gatsby-plugin-sharpspring
+  install: npm install gatsby-plugin-sharpspring
+  official: false
+  version: 1.0.4
+  published: '2021-05-16'
+  note: injects the SharpSpring tracking script into a Gatsby site — not an API client
+- language: javascript
+  registry: npm
+  name: '@pipedream/sharpspring'
+  url: https://www.npmjs.com/package/@pipedream/sharpspring
+  install: npm install @pipedream/sharpspring
+  official: false
+  version: 0.6.0
+  published: '2025-02-19'
+  note: Pipedream's integration components; first-party to Pipedream, not to SharpSpring
+- language: javascript
+  registry: npm
+  name: '@gustavojosemelo/n8n-nodes-constant-contact-sharp-spring-api'
+  url: https://www.npmjs.com/package/@gustavojosemelo/n8n-nodes-constant-contact-sharp-spring-api
+  install: npm install @gustavojosemelo/n8n-nodes-constant-contact-sharp-spring-api
+  official: false
+  version: 1.0.3
+  published: '2026-03-09'
+  note: >-
+    n8n community node targeting API v1; the most recently published SharpSpring code on any registry,
+    and it is a workflow node rather than a client library.
+registries_checked:
+- {registry: npm, query: sharpspring, official_hits: 0}
+- {registry: pypi, queries: [sharpspring, sharpspring-api, pysharpspring], status: 404, official_hits: 0}
+- {registry: packagist, query: sharpspring, official_hits: 0}
+- {registry: rubygems, official_hits: 0}
+- {registry: crates.io, official_hits: 0}
+- {registry: nuget, official_hits: 0}
+- {registry: maven-central, official_hits: 0}
+- {registry: pkg.go.dev, official_hits: 0}
+github_org:
+  url: https://github.com/sharpspring
+  verified: true
+  public_repos: 69
+  first_party_api_clients: 0
+  note: >-
+    Verified organization created 2012-02-22, but every public repo is a fork of an unrelated
+    third-party project. No SharpSpring API client, no OpenAPI, no examples repository.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://registry.npmjs.org/-/v1/search?text=sharpspring
+    status: 200
+  - url: https://pypi.org/pypi/sharpspring/json
+    status: 404
+  - url: https://packagist.org/search.json?q=sharpspring
+    status: 200
+  - url: https://api.github.com/orgs/sharpspring
+    status: 200
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50404-Understanding-Lead-Gen-CRM-Open-API-Example-Code?lang=en_US
+    status: 200
+    note: provider example code is raw PHP cURL; no SDK linked

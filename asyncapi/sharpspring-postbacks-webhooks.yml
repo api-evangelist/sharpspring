@@ -1,0 +1,76 @@
+generated: '2026-08-12'
+method: searched
+source: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50234-Using-Postback-URLs?lang=en_US
+spec_type: none
+note: >-
+  SharpSpring publishes no AsyncAPI document and has no webhook subscription API — there is no
+  createWebhook/listWebhooks method anywhere in the published method surface. What it does have is
+  "Postback URLs": an outbound HTTP push configured by a human in the UI, either on a form (Settings
+  tab > Lead Status > Postback URL) or as an automation action ("post back lead info" / "account post
+  back" under Notifications). The payload is sent as multipart/form-data, not JSON, which is unusual
+  for an event surface and means consumers cannot validate it against a schema. Retry behaviour,
+  timeouts, delivery guarantees, signing and replay protection are all undocumented. This artifact
+  records the event surface honestly as a webhook catalog; it is deliberately NOT wired as AsyncAPI,
+  because no AsyncAPI document exists.
+event_surface:
+  kind: outbound postback
+  subscription_api: false
+  configuration: per-form and per-automation-step, in the application UI
+  transport: HTTP
+  encoding: multipart/form-data
+  signing: none documented
+  retries: not documented
+  delivery_guarantee: not documented
+  replay: not available
+webhooks:
+- name: form-submission-postback
+  trigger: a contact completes and submits a Lead Gen & CRM native form
+  configured_at: form Settings tab > Lead Status dropdown > Postback URL
+  encoding: multipart/form-data
+  fields:
+  - emailAddress
+  - firstName
+  - lastName
+  - leadID
+  - accountid__sb
+  - formid__sb
+  - trackingid__sb
+  - field_<id>
+  - referrer
+  - agent referrer
+  - css url
+  - recaptcha response
+  note: >-
+    field_<id> keys carry the account's custom fields; the __sb-suffixed keys are SharpSpring's
+    internal form/account/tracking identifiers.
+- name: automation-lead-postback
+  trigger: a lead meets the trigger conditions of a visual automation workflow
+  configured_at: automation > +Add > Action > Notifications > "post back lead info" > "to this URL"
+  encoding: multipart/form-data
+  payload: lead record fields, including custom fields
+- name: automation-account-postback
+  trigger: an account meets the trigger conditions of a visual automation workflow
+  configured_at: automation > +Add > Action > Notifications > "account post back" > "to this URL"
+  encoding: multipart/form-data
+  payload: account record fields
+related_api_methods:
+- subscribeToLeadUpdates
+- getEventsbyType
+- getEmailEvents
+- getEmailSendEvents
+- getLeadTimeline
+note_on_polling: >-
+  Because there is no subscription API, most integrations built on this platform poll the
+  *DateRange methods (getLeadsDateRange, getAccountsDateRange, getOpportunitiesDateRange,
+  getCampaignsDateRange, getDealStagesDateRange, getOpportunityLeadsDateRange) on an interval and
+  reconcile against updateTimestamp, rather than consuming events.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50234-Using-Postback-URLs?lang=en_US
+    status: 200
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50564-Understanding-Lead-Gen--CRM-Open-API-Methods?lang=en_US
+    status: 200
+  - url: https://api.sharpspring.com/asyncapi.yaml
+    status: 307
+    note: redirects to the login shell — no AsyncAPI document served

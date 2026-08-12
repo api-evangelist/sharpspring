@@ -1,0 +1,63 @@
+generated: '2026-08-12'
+method: searched
+source: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+docs: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+limit_count: 5
+headers_published: false
+note: >-
+  SharpSpring publishes hard numeric limits in the Open API overview, which is more than most
+  providers do — but it publishes no runtime signal. There is no documented X-RateLimit-*, RateLimit-*
+  or Retry-After header, and exhaustion is not reported as HTTP 429: it comes back as an application
+  error code (106 daily, 107 per-second, 209 per-request query count) inside a 200-level JSON envelope.
+  An agent therefore cannot discover its remaining budget from a response; it can only detect
+  exhaustion after the fact by parsing the error object. Limits could not be verified live because the
+  endpoint requires an account credential.
+rate_limits:
+- scope: per-account
+  window: 1 day
+  limit: 50000
+  unit: API requests
+  note: stated as the default; the docs do not say whether it varies by plan
+  exhaustion:
+    error_code: 106
+    message: Exceeded daily method call limit.
+    http_status: 200
+- scope: per-account
+  window: 1 second
+  limit: 10
+  unit: queries per second
+  exhaustion:
+    error_code: 107
+    message: Exceeded per second method call limit.
+    http_status: 200
+- scope: per-request
+  window: n/a
+  limit: 500
+  unit: queries per request
+  exhaustion:
+    error_code: 209
+    message: Attempting to execute an excess amount of queries.
+- scope: per-request
+  window: n/a
+  limit: 100
+  unit: leads per lead-processing call
+  exhaustion:
+    error_code: 222
+    message: You have exceeded the amount of leads to process. A max of 100 leads is allowed.
+- scope: per-account
+  window: 1 day
+  limit: 1000000
+  unit: contacts addable
+  note: published as an approximate throughput figure ("approximately 1 million contacts per day")
+response_headers:
+  rate_limit_headers: none documented
+  retry_after: none documented
+  status_on_exhaustion: not 429 — an application error code in a 200 response envelope
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+    status: 200
+  - url: https://api.sharpspring.com/pubapi/v1.2/
+    status: 401
+    note: anonymous probe returned no rate-limit headers of any kind

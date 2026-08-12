@@ -1,0 +1,112 @@
+generated: '2026-08-12'
+method: derived
+source: >-
+  https://knowledgebase.constantcontact.com/lead-gen-crm/articles/KnowledgeBase/50374-Understanding-Lead-Gen--CRM-Open-API-Overview?lang=en_US
+  + live probes of api.sharpspring.com
+note: >-
+  Derived from the published documentation and live probes, not from a specification — SharpSpring
+  ships no OpenAPI, JSON Schema, GraphQL SDL or AsyncAPI to test against. No compliance certifications
+  are asserted here: the Constant Contact trust/compliance pages are served from constantcontact.com,
+  which returned HTTP 403 to every client we tried, so nothing about SOC 2 / ISO 27001 / GDPR posture
+  was verified and no Compliance pointer is emitted.
+standards:
+- id: openapi
+  conforms: false
+  evidence: no OpenAPI served on any host; /openapi.json, /swagger.json, /api-docs all 307 to the login shell
+- id: json-rpc-2.0
+  conforms: false
+  evidence: >-
+    The provider describes the format as "very similar to JSON-RPC" — method/params/id are present but
+    the required `jsonrpc: "2.0"` member and the JSON-RPC error object shape are not. It is
+    JSON-RPC-flavoured, not conformant.
+- id: rest
+  conforms: false
+  evidence: single POST endpoint, no resource paths, no HTTP verb semantics, no status-code semantics
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: proprietary code/message/data error object returned inside a 200 body; no application/problem+json
+- id: rfc9116-security-txt
+  conforms: partial
+  evidence: >-
+    /.well-known/security.txt served with Contact, Encryption, Policy and Hiring on
+    api.sharpspring.com, app.sharpspring.com and marketingautomation.services — but no Expires field
+    (required), an obfuscated non-URI Contact, a 404 Encryption URL, and no PGP signature.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: no Sunset or Deprecation header observed on either API version
+- id: oauth2
+  conforms: false
+  evidence: static account ID + secret key only; no authorization server, no token endpoint, no scopes
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration 307s to the login shell on every host
+- id: rfc8414-oauth-metadata
+  conforms: false
+  evidence: /.well-known/oauth-authorization-server 307s to the login shell
+- id: asyncapi
+  conforms: false
+  evidence: no AsyncAPI document; the event surface is UI-configured multipart/form-data postbacks
+- id: webhooks
+  conforms: partial
+  evidence: >-
+    Outbound HTTP push exists (form and automation Postback URLs) but there is no subscription API,
+    no signing, no documented retry policy and no JSON payload.
+- id: rate-limit-headers
+  conforms: false
+  evidence: no RateLimit-*/X-RateLimit-*/Retry-After headers; exhaustion returned as error codes 106/107/209
+- id: idempotency
+  conforms: false
+  evidence: no idempotency key or safe-retry contract documented
+- id: pagination
+  conforms: partial
+  evidence: limit/offset with a documented 500 ceiling, but no total, cursor or next-link in the response
+- id: json-schema
+  conforms: false
+  evidence: object schemas are published as HTML tables in the knowledge base, not as JSON Schema
+- id: mcp
+  conforms: false
+  evidence: no MCP server published; POST /mcp on the API host returns 303
+- id: a2a
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json miss on every host
+- id: llms-txt
+  conforms: false
+  evidence: no /llms.txt served on the marketing or API host
+- id: tls-1.3
+  conforms: true
+  evidence: TLS 1.3 negotiated on api.sharpspring.com
+- id: hsts
+  conforms: true
+  evidence: 'strict-transport-security: max-age=31536000; includeSubDomains observed on api.sharpspring.com'
+compliance_certifications: []
+compliance_note: >-
+  Not asserted. SharpSpring's legal and security pages now 301 to constantcontact.com, which blocks
+  automated reads (HTTP 403). A compliance posture may well be published there; we did not read it, so
+  we do not claim it.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - url: https://api.sharpspring.com/openapi.json
+    status: 307
+  - url: https://api.sharpspring.com/swagger.json
+    status: 307
+  - url: https://api.sharpspring.com/api-docs
+    status: 307
+  - url: https://api.sharpspring.com/graphql
+    status: 404
+  - url: https://api.sharpspring.com/mcp
+    status: 303
+  - url: https://api.sharpspring.com/asyncapi.yaml
+    status: 307
+  - url: https://api.sharpspring.com/.well-known/agent-card.json
+    status: 307
+  - url: https://api.sharpspring.com/.well-known/agent.json
+    status: 307
+  - url: https://api.sharpspring.com/.well-known/openid-configuration
+    status: 307
+  - url: https://api.sharpspring.com/.well-known/security.txt
+    status: 200
+  - url: https://www.constantcontact.com/trust-center
+    status: 404
+  - url: https://www.constantcontact.com/disclosure
+    status: 403
