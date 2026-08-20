@@ -29,6 +29,17 @@ tags:
 - Leads
 - Campaigns
 - Automation
+- Software-as-a-Service
+tags_raw:
+- Company
+- Marketing
+- Marketing Automation
+- CRM
+- Email Marketing
+- Sales
+- Leads
+- Campaigns
+- Automation
 - SaaS
 apis:
 - aid: sharpspring:open-api
