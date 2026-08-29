@@ -11,6 +11,17 @@ description: SharpSpring — now sold as Constant Contact Lead Gen & CRM after C
   no OpenAPI description. Event delivery is handled by workflow and form Postback URLs rather than a
   webhook subscription API.
 url: https://raw.githubusercontent.com/api-evangelist/sharpspring/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://sharpspring.com/wp-content/uploads/2021/10/SharpSpring-From-CTCT-Logo-RGB-Color-1200.png
 x-type: company
 x-source: harvest:marketing-integration-graph
