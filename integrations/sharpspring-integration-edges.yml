@@ -1,0 +1,449 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/sharpspring/integrations
+checked:
+- https://composio.dev/toolkits/sharpspring
+- https://monid.ai/tools/sharpspring
+- https://n8n.io/integrations/sharpspring/
+- https://zapier.com/apps/sharpspring/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: sharpspring
+  url: https://zapier.com/apps/sharpspring/integrations
+  external_url: https://sharpspring.com/
+  partner_tier: GOLD
+  triggers:
+  - key: newAccount
+    label: New Account
+  - key: newEmailOpen
+    label: New Email Open Event
+  - key: newFormFillout
+    label: New Form Fillout Event
+  - key: newLead
+    label: New Lead
+  - key: newOpportunity
+    label: New Opportunity
+  - key: newPageVisit
+    label: New Page Visit Event
+  actions:
+  - key: createAccount
+    label: Create Account
+  - key: createCampaign
+    label: Create Campaign
+  - key: createLead_v2
+    label: Create/Update Lead
+  - key: createOpportunity_v5
+    label: Create/Update Opportunity
+  searches: []
+edges:
+- partner_name: Typeform
+  partner: typeform
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/typeform
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.typeform.com/signup?utm_medium=referral&utm_source=zapier&utm_campaign=zapier_integration&utm_content=marketplace
+- partner_name: Unbounce
+  partner: unbounce
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/unbounce
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://unbounce.com/
+- partner_name: Mailchimp
+  partner: mailchimp
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/mailchimp
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://mailchimp.com/
+- partner_name: LinkedIn Ads
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/linkedin-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://www.linkedin.com/
+- partner_name: WooCommerce
+  partner: woocommerce
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/woocommerce
+  direction: third-party
+  category: eCommerce
+  partner_url: https://woocommerce.com/products/woocommerce-zapier/?utm_source=zapier&utm_medium=website&utm_campaign=integration
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: CallRail
+  partner: callrail
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/callrail
+  direction: third-party
+  category: Call Tracking
+  partner_url: https://www.callrail.com/?utm_medium=strategicpartner&utm_source=zapier&utm_campaign=app_listing&utm_content=app_listing
+- partner_name: Mailparser
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/mailparser
+  direction: third-party
+  category: Email
+  partner_url: https://mailparser.io/
+- partner_name: Twilio
+  partner: twilio
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/twilio
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://www.twilio.com/
+- partner_name: Parseur
+  partner: parseur
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/parseur
+  direction: third-party
+  category: Documents
+  partner_url: https://parseur.com/
+- partner_name: WPForms
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/wpforms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://wpforms.com/
+- partner_name: OnceHub
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/oncehub
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://www.oncehub.com/scheduleonce/home
+- partner_name: Woodpecker.co
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/woodpecker
+  direction: third-party
+  category: Drip Emails
+  partner_url: http://www.woodpecker.co/
+- partner_name: ConnectWise Manage
+  partner: null
+  partner_match: null
+  partner_candidate: skykick
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/connectwise-manage
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://www.connectwise.com/
+- partner_name: Apollo
+  partner: apollo
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/apollo
+  direction: third-party
+  category: Sales & CRM
+  partner_url: https://www.apollo.io/
+- partner_name: monday.com
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/monday
+  direction: third-party
+  category: Project Management
+  partner_url: https://monday.com/
+- partner_name: Seamless
+  partner: seamless-ai
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/seamless
+  direction: third-party
+  category: AI Sales Tools
+  partner_url: https://seamless.ai/customers/education/articles/zapier-connection-guide
+- partner_name: Ninja Forms
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/ninjaforms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://ninjaforms.com/extensions/zapier/
+- partner_name: Outgrow
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/outgrow
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://outgrow.co/?utm_source=zapier&utm_medium=referral&utm_campaign=app_directory_
+- partner_name: NeverBounce
+  partner: neverbounce
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/neverbounce
+  direction: third-party
+  category: Email
+  partner_url: https://neverbounce.com/
+- partner_name: WordPress
+  partner: wordpress
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/wordpress
+  direction: third-party
+  category: Website Builders
+  partner_url: https://wordpress.org/
+- partner_name: Calendly
+  partner: calendly
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/calendly
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://calendly.com/?utm_medium=partner&utm_source=zapier&utm_campaign=main_partner_page&utm_content=main_inbound_link
+- partner_name: LinkedIn
+  partner: linkedin
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/linkedin
+  direction: third-party
+  category: Microsoft
+  partner_url: http://www.linkedin.com/
+- partner_name: Survicate
+  partner: survicate
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/survicate
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://survicate.com/
+- partner_name: Workamajig
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/workamajig
+  direction: third-party
+  category: Project Management
+  partner_url: http://www.workamajig.com/
+- partner_name: Qwilr
+  partner: qwilr
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/qwilr
+  direction: third-party
+  category: Proposal & Invoice Management
+  partner_url: https://qwilr.com/
+- partner_name: Poptin
+  partner: poptin
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/poptin
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://www.poptin.com/
+- partner_name: Wistia
+  partner: wistia
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/wistia
+  direction: third-party
+  category: Video & Audio
+  partner_url: https://wistia.com/
+- partner_name: Cliengo
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/cliengo
+  direction: third-party
+  category: Contact Management
+  partner_url: https://www.cliengo.com/
+- partner_name: BizConnect
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/bizconnect
+  direction: third-party
+  category: Productivity
+  partner_url: https://bizconnectus.com/
+- partner_name: bonjoro
+  partner: bonjoro
+  partner_match: domain
+  type: contract
+  channel: partner-built
+  relationship: processor-connection
+  direction: partner-built
+  evidence: https://github.com/api-evangelist/bonjoro/blob/main/openapi/bonjoro-integrations-api-openapi.yml
+  contract_reference:
+    repo: bonjoro
+    spec_file: bonjoro-integrations-api-openapi.yml
+    value: sharpspring
+    property: schemas.integration.provider
+    detected_by: detect-payment-method-edges.py
+    detected: '2026-10-12'
+templates:
+- title: Update SharpSpring leads with new Google Ads leads
+  url: https://zapier.com/apps/google-ads/integrations/sharpspring/538678/update-sharpspring-leads-with-new-google-ads-leads
+  apps:
+  - google-ads
+  - sharpspring
+- title: Add or update leads on SharpSpring from new Unbounce submissions
+  url: https://zapier.com/apps/sharpspring/integrations/unbounce/6831/add-or-update-leads-on-sharpspring-from-new-unbounce-submissions
+  apps:
+  - unbounce
+  - sharpspring
+- title: Send Offline Conversion to Google Ads for New Lead in SharpSpring
+  url: https://zapier.com/apps/google-ads/integrations/sharpspring/1007527/send-offline-conversion-to-google-ads-for-new-lead-in-sharpspring
+  apps:
+  - sharpspring
+  - google-ads
+- title: Send Slack messages for new SharpSpring form submissions
+  url: https://zapier.com/apps/sharpspring/integrations/slack/6838/send-slack-messages-for-new-sharpspring-form-submissions
+  apps:
+  - sharpspring
+  - slack
+- title: Add new SharpSpring form fills to Google Sheets as rows
+  url: https://zapier.com/apps/google-sheets/integrations/sharpspring/11759/add-new-sharpspring-form-fills-to-google-sheets-as-rows
+  apps:
+  - sharpspring
+  - google-sheets
+- title: Update or create SharpSpring leads from new webhook payloads
+  url: https://zapier.com/apps/sharpspring/integrations/webhook/6835/update-or-create-sharpspring-leads-from-new-webhook-payloads
+  apps:
+  - webhook
+  - sharpspring
+- title: Create SharpSpring contacts from new Facebook Leads
+  url: https://zapier.com/apps/facebook-lead-ads/integrations/sharpspring/62299/create-sharpspring-contacts-from-new-facebook-leads
+  apps:
+  - facebook-lead-ads
+  - sharpspring
+- title: Add or update leads on SharpSpring from emails parsed by Zapier
+  url: https://zapier.com/apps/email-parser/integrations/sharpspring/6829/add-or-update-leads-on-sharpspring-from-emails-parsed-by-zapier
+  apps:
+  - email-parser
+  - sharpspring
+- title: Verify new SharpSpring leads' email addresses with NeverBounce
+  url: https://zapier.com/apps/sharpspring/integrations/sharpspring/26555/verify-new-lead-from-sharpspring
+  apps:
+  - sharpspring
+  - neverbounce
+  - filter
+- title: Update SharpSpring leads when contacts are updated in Redtail CRM
+  url: https://zapier.com/apps/redtailcrm/integrations/sharpspring/1668978/update-sharpspring-leads-when-contacts-are-updated-in-redtail-crm
+  apps:
+  - redtailcrm
+  - sharpspring
+- title: Create or update SharpSpring leads from completed CallRail phone calls
+  url: https://zapier.com/apps/callrail/integrations/sharpspring/1257977/create-or-update-sharpspring-leads-from-completed-callrail-phone-calls
+  apps:
+  - callrail
+  - sharpspring
+- title: Create or update SharpSpring leads from new Ninja Forms submissions
+  url: https://zapier.com/apps/ninjaforms/integrations/sharpspring/1606705/create-or-update-sharpspring-leads-from-new-ninja-forms-submissions
+  apps:
+  - ninjaforms
+  - sharpspring
+template_total: 435
