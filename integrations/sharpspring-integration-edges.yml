@@ -3,6 +3,7 @@ method: searched
 source:
 - https://zapier.com/apps/sharpspring/integrations
 checked:
+- freshbooks/integrations/freshbooks-integration-edges.yml
 - https://composio.dev/toolkits/sharpspring
 - https://monid.ai/tools/sharpspring
 - https://n8n.io/integrations/sharpspring/
@@ -384,6 +385,23 @@ edges:
     property: schemas.integration.provider
     detected_by: detect-payment-method-edges.py
     detected: '2026-10-12'
+- partner_name: FreshBooks (own)
+  partner: freshbooks
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appstore.freshbooks.com/apps/sharpspring
+  mirror_of: freshbooks/integrations/freshbooks-integration-edges.yml
+  apps:
+  - SharpSpring
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Nurture Customers
 templates:
 - title: Update SharpSpring leads with new Google Ads leads
   url: https://zapier.com/apps/google-ads/integrations/sharpspring/538678/update-sharpspring-leads-with-new-google-ads-leads

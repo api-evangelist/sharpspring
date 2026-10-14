@@ -84,7 +84,6 @@
   arazzo: null
 - slug: sharpspring-linkedin-ads
   label: LinkedIn Ads
-  partner: linkedin-ads
   partner_name: LinkedIn Ads
   category: Ads & Conversion
   type: marketplace
@@ -211,7 +210,6 @@
   arazzo: null
 - slug: sharpspring-monday-com
   label: monday.com
-  partner: monday-com
   partner_name: monday.com
   category: Project Management
   type: marketplace
@@ -377,5 +375,18 @@
     property: schemas.integration.provider
     detected_by: detect-payment-method-edges.py
     detected: '2026-10-12'
+  status: not-a-workflow
+  arazzo: null
+- slug: sharpspring-freshbooks-own
+  label: FreshBooks (own)
+  partner: freshbooks
+  partner_name: FreshBooks (own)
+  category: Nurture Customers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appstore.freshbooks.com/apps/sharpspring
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
