@@ -7,6 +7,7 @@ checked:
 - https://composio.dev/toolkits/sharpspring
 - https://monid.ai/tools/sharpspring
 - https://n8n.io/integrations/sharpspring/
+- https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/sharpspring/integrations
 summary: null
 marketplace_apps:
@@ -402,6 +403,31 @@ edges:
   detected: '2026-10-14'
   detected_by: mirror-platform-listings.py
   category: Nurture Customers
+- partner_name: Zapier
+  partner: zapier
+  partner_match: aggregator
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://zapier.com/apps/sharpspring/integrations
+  category: null
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: SharpSpring
+    matched_domain: sharpspring.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: sharpspring
+    beta: false
+    builder: unknown (not in the directory record)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
 templates:
 - title: Update SharpSpring leads with new Google Ads leads
   url: https://zapier.com/apps/google-ads/integrations/sharpspring/538678/update-sharpspring-leads-with-new-google-ads-leads
