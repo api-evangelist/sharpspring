@@ -15,6 +15,7 @@
   evidence: https://zapier.com/apps/sharpspring/integrations/unbounce/6831/add-or-update-leads-on-sharpspring-from-new-unbounce-submissions
   template: https://zapier.com/apps/sharpspring/integrations/unbounce/6831/add-or-update-leads-on-sharpspring-from-new-unbounce-submissions
   source: template
+  relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
 - slug: sharpspring-verify-new-sharpspring-leads-email-addresses-with-neverbounce
@@ -29,6 +30,7 @@
   evidence: https://zapier.com/apps/sharpspring/integrations/sharpspring/26555/verify-new-lead-from-sharpspring
   template: https://zapier.com/apps/sharpspring/integrations/sharpspring/26555/verify-new-lead-from-sharpspring
   source: template
+  relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
 - slug: sharpspring-create-or-update-sharpspring-leads-from-completed-callrail-phone-calls
@@ -43,6 +45,7 @@
   evidence: https://zapier.com/apps/callrail/integrations/sharpspring/1257977/create-or-update-sharpspring-leads-from-completed-callrail-phone-calls
   template: https://zapier.com/apps/callrail/integrations/sharpspring/1257977/create-or-update-sharpspring-leads-from-completed-callrail-phone-calls
   source: template
+  relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
 - slug: sharpspring-create-or-update-sharpspring-leads-from-new-ninja-forms-submissions
@@ -56,307 +59,7 @@
   evidence: https://zapier.com/apps/ninjaforms/integrations/sharpspring/1606705/create-or-update-sharpspring-leads-from-new-ninja-forms-submissions
   template: https://zapier.com/apps/ninjaforms/integrations/sharpspring/1606705/create-or-update-sharpspring-leads-from-new-ninja-forms-submissions
   source: template
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-typeform
-  label: Typeform
-  partner: typeform
-  partner_name: Typeform
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/typeform
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-mailchimp
-  label: Mailchimp
-  partner: mailchimp
-  partner_name: Mailchimp
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/mailchimp
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-linkedin-ads
-  label: LinkedIn Ads
-  partner_name: LinkedIn Ads
-  category: Ads & Conversion
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/linkedin-ads
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-woocommerce
-  label: WooCommerce
-  partner: woocommerce
-  partner_name: WooCommerce
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/woocommerce
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-hubspot
-  label: HubSpot
-  partner: hubspot
-  partner_name: HubSpot
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/hubspot
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-mailparser
-  label: Mailparser
-  partner_name: Mailparser
-  category: Email
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/mailparser
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-twilio
-  label: Twilio
-  partner: twilio
-  partner_name: Twilio
-  category: Phone & SMS
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/twilio
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-parseur
-  label: Parseur
-  partner: parseur
-  partner_name: Parseur
-  category: Documents
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/parseur
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-wpforms
-  label: WPForms
-  partner_name: WPForms
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/wpforms
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-oncehub
-  label: OnceHub
-  partner_name: OnceHub
-  category: Scheduling & Booking
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/oncehub
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-woodpecker-co
-  label: Woodpecker.co
-  partner_name: Woodpecker.co
-  category: Drip Emails
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/woodpecker
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-connectwise-manage
-  label: ConnectWise Manage
-  partner_name: ConnectWise Manage
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/connectwise-manage
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-apollo
-  label: Apollo
-  partner: apollo
-  partner_name: Apollo
-  category: Sales & CRM
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/apollo
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-monday-com
-  label: monday.com
-  partner_name: monday.com
-  category: Project Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/monday
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-seamless
-  label: Seamless
-  partner: seamless-ai
-  partner_name: Seamless
-  category: AI Sales Tools
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/seamless
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-outgrow
-  label: Outgrow
-  partner_name: Outgrow
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/outgrow
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-wordpress
-  label: WordPress
-  partner: wordpress
-  partner_name: WordPress
-  category: Website Builders
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/wordpress
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-calendly
-  label: Calendly
-  partner: calendly
-  partner_name: Calendly
-  category: Scheduling & Booking
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/calendly
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-linkedin
-  label: LinkedIn
-  partner: linkedin
-  partner_name: LinkedIn
-  category: Microsoft
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/linkedin
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-survicate
-  label: Survicate
-  partner: survicate
-  partner_name: Survicate
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/survicate
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-workamajig
-  label: Workamajig
-  partner_name: Workamajig
-  category: Project Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/workamajig
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-qwilr
-  label: Qwilr
-  partner: qwilr
-  partner_name: Qwilr
-  category: Proposal & Invoice Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/qwilr
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-poptin
-  label: Poptin
-  partner: poptin
-  partner_name: Poptin
-  category: Ads & Conversion
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/poptin
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-wistia
-  label: Wistia
-  partner: wistia
-  partner_name: Wistia
-  category: Video & Audio
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/wistia
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-cliengo
-  label: Cliengo
-  partner_name: Cliengo
-  category: Contact Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/cliengo
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: sharpspring-bizconnect
-  label: BizConnect
-  partner_name: BizConnect
-  category: Productivity
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/sharpspring/integrations/bizconnect
-  source: edge
+  relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
 - slug: sharpspring-bonjoro
@@ -444,4 +147,333 @@
     detected_by: sweep-compliance-assurance.py
     detected: '2026-10-20'
   status: not-a-workflow
+  arazzo: null
+- slug: sharpspring-typeform
+  label: Typeform
+  partner: typeform
+  partner_name: Typeform
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/typeform
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-mailchimp
+  label: Mailchimp
+  partner: mailchimp
+  partner_name: Mailchimp
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/mailchimp
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-linkedin-ads
+  label: LinkedIn Ads
+  partner: linkedin-ads
+  partner_name: LinkedIn Ads
+  category: Ads & Conversion
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/linkedin-ads
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-woocommerce
+  label: WooCommerce
+  partner: woocommerce
+  partner_name: WooCommerce
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/woocommerce
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-hubspot
+  label: HubSpot
+  partner: hubspot
+  partner_name: HubSpot
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/hubspot
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-mailparser
+  label: Mailparser
+  partner_name: Mailparser
+  category: Email
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/mailparser
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-twilio
+  label: Twilio
+  partner: twilio
+  partner_name: Twilio
+  category: Phone & SMS
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/twilio
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-parseur
+  label: Parseur
+  partner: parseur
+  partner_name: Parseur
+  category: Documents
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/parseur
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-wpforms
+  label: WPForms
+  partner_name: WPForms
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/wpforms
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-oncehub
+  label: OnceHub
+  partner_name: OnceHub
+  category: Scheduling & Booking
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/oncehub
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-woodpecker-co
+  label: Woodpecker.co
+  partner_name: Woodpecker.co
+  category: Drip Emails
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/woodpecker
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-connectwise-manage
+  label: ConnectWise Manage
+  partner_name: ConnectWise Manage
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/connectwise-manage
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-apollo
+  label: Apollo
+  partner: apollo-io
+  partner_name: Apollo
+  category: Sales & CRM
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/apollo
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-monday-com
+  label: monday.com
+  partner: monday-com
+  partner_name: monday.com
+  category: Project Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/monday
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-seamless
+  label: Seamless
+  partner: seamless-ai
+  partner_name: Seamless
+  category: AI Sales Tools
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/seamless
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-outgrow
+  label: Outgrow
+  partner_name: Outgrow
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/outgrow
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-wordpress
+  label: WordPress
+  partner: wordpress
+  partner_name: WordPress
+  category: Website Builders
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/wordpress
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-calendly
+  label: Calendly
+  partner: calendly
+  partner_name: Calendly
+  category: Scheduling & Booking
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/calendly
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-linkedin
+  label: LinkedIn
+  partner: linkedin-ads
+  partner_name: LinkedIn
+  category: Microsoft
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/linkedin
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-survicate
+  label: Survicate
+  partner: survicate
+  partner_name: Survicate
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/survicate
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-workamajig
+  label: Workamajig
+  partner_name: Workamajig
+  category: Project Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/workamajig
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-qwilr
+  label: Qwilr
+  partner: qwilr
+  partner_name: Qwilr
+  category: Proposal & Invoice Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/qwilr
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-poptin
+  label: Poptin
+  partner: poptin
+  partner_name: Poptin
+  category: Ads & Conversion
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/poptin
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-wistia
+  label: Wistia
+  partner: wistia
+  partner_name: Wistia
+  category: Video & Audio
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/wistia
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-cliengo
+  label: Cliengo
+  partner_name: Cliengo
+  category: Contact Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/cliengo
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: sharpspring-bizconnect
+  label: BizConnect
+  partner_name: BizConnect
+  category: Productivity
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/sharpspring/integrations/bizconnect
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
   arazzo: null
