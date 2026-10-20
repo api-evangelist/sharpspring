@@ -4,7 +4,9 @@ source:
 - https://zapier.com/apps/sharpspring/integrations
 checked:
 - freshbooks/integrations/freshbooks-integration-edges.yml
+- https://cloudsecurityalliance.org/star/registry
 - https://composio.dev/toolkits/sharpspring
+- https://eucoc.cloud/en/public-register/list-of-adherent-services
 - https://monid.ai/tools/sharpspring
 - https://n8n.io/integrations/sharpspring/
 - https://zapier.com/api/v4/apps/
@@ -428,6 +430,36 @@ edges:
     builder: unknown (not in the directory record)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Cloud Security Alliance STAR Registry
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://cloudsecurityalliance.org/star/registry/sharpspring/services/sharpspring-marketing-automation-platform
+  category: Cloud security assurance
+  contract_reference:
+    register: CSA STAR Registry (cloudsecurityalliance.org/star/registry)
+    spec_file: null
+    standard: CSA STAR
+    role: star-level-1
+    registered_name: SharpSpring
+    registry_id: sharpspring
+    service_url: http://www.sharpspring.com/
+    matched_domain: sharpspring.com
+    matched_by: domain
+    identity_source: the service URL the organisation filed on its STAR listing (no lookup)
+    levels:
+    - STAR Level 1
+    certified_products: []
+    signal_note: STAR Level 1 (CAIQ self-assessment) = participation; certified_products = one entry per STAR Level
+      2 / STAR for AI Level 2 assessment TYPE (third-party certification, attestation, C-STAR, ValidAIted); lapsed
+      = every instance marked (Deprecated) by the registry; service counts never recorded
+    detected_by: sweep-compliance-assurance.py
+    detected: '2026-10-20'
+  detected_by: sweep-compliance-assurance.py
+  first_seen: '2026-10-20'
 templates:
 - title: Update SharpSpring leads with new Google Ads leads
   url: https://zapier.com/apps/google-ads/integrations/sharpspring/538678/update-sharpspring-leads-with-new-google-ads-leads
